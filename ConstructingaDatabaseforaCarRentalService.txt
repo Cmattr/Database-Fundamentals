@@ -1,0 +1,5 @@
+New Vehicle additions: When a new vehicle is added to the Vehicles entity, it would initially not be associated with any rental agreement until it’s rented out. The rental_id in the Vehicles entity could be NULL to indicate that the vehicle is available for rent.
+Rental Agreement Updates: If there are updates to a rental agreement (like extending the rental period), it can be directly updated in the Rental Agreements entity without affecting the Vehicles entity since they are linked by rental_id.
+Vehicle AThis design allows for efficient handling of these scenarios while maintaining the integrity of the data in the database. vailability Checks: To check if a vehicle is available, one can look at whether the rental_id field in the Vehicles entity is NULL or not.
+If it’s NULL, then no current rental agreement exists for that vehicle indicating its availability. This design allows for efficient handling of these scenarios while maintaining the integrity of the data in the database.
+
